@@ -1,0 +1,174 @@
+<div class="cart-container">
+  <div class="shopping-cart-header">
+    <div class="header">
+      <a class="back-btn">
+        <i class="fa-solid fa-arrow-left-long"></i>
+        Shopping Cart
+      </a>
+      <p>
+        No. Items: <span>{{ cartItems.length }}</span>
+      </p>
+    </div>
+  </div>
+  <main>
+    <div class="product_list">
+      <div *ngFor="let item of cartItems" class="product_wrapper">
+        <div class="product-image">
+          <button class="close">
+            <i class="fas fa-times"></i>
+          </button>
+          <img src="https://bit.ly/3A6Y9lO" alt="" />
+        </div>
+        <div class="product">
+          <div class="product-details">
+            <div class="product-info">
+              <h1>
+                {{ item.name }}
+                <span class="product_id">{{ item.id }}</span>
+              </h1>
+              <ul>
+                <li>
+                  <img
+                    src="https://d2studios.net/wp-content/uploads/blog/2015/04/6-Uses-for-a-Professional-Personal-Portrait-Photograph.jpg"
+                    alt=""
+                  />
+                  <span>{{ item.user }}</span>
+                </li>
+                <li>
+                  <i class="fas fa-eye"></i>
+                  <span>{{ item.views }} Views</span>
+                </li>
+                <li>
+                  <i class="fas fa-heart"></i>
+                  <span>{{ item.followers }} Followers</span>
+                </li>
+              </ul>
+              <p class="date">
+                <i class="fas fa-clock"></i>
+                <span style="margin-left: 8px;">{{ item.date }}</span>
+              </p>
+            </div>
+            <div class="price-info">
+              <h1>
+                {{ item.price }} <span>(${{ item.usd }})</span>
+              </h1>
+              <div class="amount-table">
+                <div class="amount">
+                  <span>Taxes</span>
+                  <span>{{ item.taxes }}%</span>
+                </div>
+                <div class="amount">
+                  <span>Sub Total</span>
+                  <span>${{ item.subTotal }}</span>
+                </div>
+                <div class="amount">
+                  <span>Total:</span>
+                  <span>${{ item.total }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pay-buttons">
+            <button class="btn-pay">Pay</button>
+            <button class="btn-after-pay">After Pay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="payment-method">
+      <h1>Choose Payment Methods</h1>
+      <p><i class="fas fa-circle"></i> Credit/Debit Card</p>
+
+      <div class="payment-options">
+        <button class="active">
+          <img
+            src="https://1000logos.net/wp-content/uploads/2017/05/emblem-Paypal.jpg"
+            alt="paypal"
+          />
+        </button>
+        <button>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/640px-MasterCard_Logo.svg.png"
+            alt="mastercard"
+          />
+        </button>
+        <button>
+          <img
+            src="https://logos-world.net/wp-content/uploads/2020/05/Visa-Logo.png"
+            alt="visa"
+          />
+        </button>
+        <button>
+          <img
+            src="https://static.vecteezy.com/system/resources/thumbnails/000/357/048/small/3__2821_29.jpg"
+            alt="card"
+          />
+        </button>
+      </div>
+      <div class="card-preview">
+        <div class="preview">
+          <img
+            src="https://pngimg.com/uploads/credit_card/credit_card_PNG204.png"
+            alt="card preview"
+          />
+        </div>
+        <div class="addOne">
+          <button>
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <form>
+        <div class="inputName">
+          <label>Name as Card</label>
+          <input type="text" name="" id="" />
+        </div>
+        <div class="inputName">
+          <label>Card Number</label>
+          <input type="number" name="" id="" />
+        </div>
+        <div class="inputName">
+          <div class="inputDateAndCvv">
+            <div>
+              <label>Ex. Date</label>
+              <select name="" id="">
+                <option value="">00/00</option>
+              </select>
+            </div>
+            <div>
+              <label for="">CVV</label>
+              <input type="number" name="" id="" />
+            </div>
+          </div>
+        </div>
+        <div class="price-info">
+          <div class="amount-table">
+            <div class="amount">
+              <span>Total Items</span>
+              <span>
+                {{ total.items }}
+                <span>(${{ total.usd }})</span>
+              </span>
+            </div>
+            <div class="amount">
+              <span>Taxes</span>
+              <span>{{ total.taxes }}%</span>
+            </div>
+            <div class="amount">
+              <span>Sub Total</span>
+              <span>${{ total.subTotal }}</span>
+            </div>
+            <div class="amount">
+              <span>Total:</span>
+              <span>${{ total.total }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="pay-buttons">
+          <button class="btn-pay">Pay</button>
+          <button class="btn-after-pay">After Pay</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
